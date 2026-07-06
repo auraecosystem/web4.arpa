@@ -4,6 +4,25 @@
   <script defer src="https://postgresqlco.nf/assets/snippet/postgresqlco.nf.docs.min.js"></script>
 </head>
 <body>
+  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://web4app.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <p class="my-conf-post">WAL-logging of some bulk operations can be safely skipped by setting wal_level to minimal.
     While turning off fsync is often a performance benefit, this can result in unrecoverable data corruption.
     wal_buffers selects a size equal to 1/32nd (about 3%) of shared_buffers.</p>
@@ -12,5 +31,6 @@
       CONF.init('.my-conf-post');
     });
   </script>
+  <script id="dsq-count-scr" src="//web4app.disqus.com/count.js" async></script>
 </body>
 </html>

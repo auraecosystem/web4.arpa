@@ -1,0 +1,54 @@
+
+Welcome to the Web4.arpa Wiki
+
+*Welcome to the official documentation for Web4.arpa.
+
+Web4.arpa is an open platform that brings AI, blockchain, decentralized applications, cloud infrastructure, and developer tooling together in one ecosystem. It is built for developers, teams, and contributors who want to create, deploy, and scale modern web applications without stitching together separate systems.
+
+This wiki is your guide to getting started, understanding the platform, and contributing to the project.
+
+**Documentation
+
+* Setup
+    * Getting started
+    * Installation
+    * Configuration
+* Platform
+    * Architecture
+    * API reference
+    * SDKs
+    * Smart contracts
+    * AI services
+    * Deployment guide
+    * Security
+* Support
+    * FAQ
+
+**Features**
+
+* Core capabilities
+    * AI-powered services
+    * Blockchain integration
+    * REST and WebSocket APIs
+    * Developer SDKs
+* Platform capabilities
+    * Authentication and authorization
+    * Scalable microservices architecture
+    * Cloud-native deployment
+    * Open-source architecture
+Getting Started:
+
+*Clone the repository
+
+:[bash]:
+git clone [https://github.com/QUBUHUB/web4app4.git](https://github.com/auraecosystem/web4.arpa)
+
+Follow the Installation guide to configure your development environment and launch the platform.
+
+Contributing
+
+Contributions are welcome. Please read the Contributing guide before submitting issues or pull requests.
+
+License
+
+Refer to the project’s license for usage terms and conditions.

@@ -13,8 +13,8 @@ Common goals and the variable or flag that gets you there. Each is documented in
 | Run another agent in the same repo without collisions | `CLAUDE_WORKTREE=1` (per-session git worktree)                                          |
 | Mount a wider directory tree than the git repo root   | `CLAUDE_WORKSPACE=<dir>`                                                                |
 | Keep state across sessions/reboots                    | `CLAUDE_PERSIST=1` (per-workspace) or `CLAUDE_SHARED_AUTH=1` (one volume, all projects) |
-| Resume a prior conversation                           | `claude-guard --resume` / `--continue`                                                  |
-| Make Claude login survive ephemeral teardown          | `claude-guard setup-token` (or `CLAUDE_CODE_OAUTH_TOKEN=<tok>`)                         |
+| Resume a prior conversation                           | `claude.guard --resume` / `--continue`                                                  |
+| Make Claude login survive ephemeral teardown          | `claude.guard setup-token` (or `CLAUDE_CODE_OAUTH_TOKEN=<tok>`)                         |
 | Debug with unrestricted network                       | `--dangerously-skip-firewall`                                                           |
 | Debug without the LLM monitor                         | `--dangerously-skip-monitor`                                                            |
 
@@ -22,7 +22,7 @@ The full reference follows.
 
 ## Ephemeral sessions
 
-Every `claude-guard` session is ephemeral by default. On exit, all per-session
+Every `claude.guard` session is ephemeral by default. On exit, all per-session
 Docker volumes are deleted: the Claude config directory (settings, installed
 extensions, hooks), shell history, the monitor's audit log, and any credentials
 stored inside the sandbox. By default your working tree is copied into a
@@ -42,14 +42,14 @@ must arrive on the transcript of session N+1, where the monitor can flag it.
 **The inconveniences, and how they are mitigated:**
 
 - **Claude authentication.** Claude Code's login credential lives in the config
-  volume, which is wiped. `claude-guard setup-token` captures your host
+  volume, which is wiped. `claude.guard setup-token` captures your host
   credential once; the launcher re-injects it (`CLAUDE_CODE_OAUTH_TOKEN`) into
   each fresh session automatically. You log in on the host, never inside the
   sandbox.
 
 - **GitHub access.** A GitHub App mints a short-lived, scoped repository token
   per session; your personal token is never shared or stored inside the sandbox.
-  Configure once with `claude-guard gh-app setup` (create + install in one
+  Configure once with `claude.guard gh-app setup` (create + install in one
   walkthrough), confirm the whole chain with `claude-guard gh-app verify`, and
   tokens rotate automatically thereafter. Install the App on **multiple
   organizations** (or personal accounts) and each launch auto-selects the

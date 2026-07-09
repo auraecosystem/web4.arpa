@@ -1,6 +1,6 @@
 # Configuration
 
-Environment variables and flags that tune the `claude-guard` wrapper. For the
+Environment variables and flags that tune the `claude.guard` wrapper. For the
 security rationale behind these controls, see [`SECURITY.md`](../SECURITY.md);
 for widening the firewall, see [Expanding network access](#expanding-network-access).
 
